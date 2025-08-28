@@ -1,0 +1,12 @@
+# Ignore dataset files
+data/*.bin
+
+# Ignore model checkpoints
+saved_models/*.pt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
