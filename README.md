@@ -1,8 +1,3 @@
-Absolutely, Sobiya! I’ll give you a **ready-to-copy, fully structured README.md** where the folder structure is properly formatted so it won’t collapse on GitHub.
-
----
-
-```markdown
 # Small Language Model (SLM) from Scratch 👩‍💻
 
 ![Project Demo](assets/demo.gif)  
@@ -24,23 +19,22 @@ This project is implemented from scratch in **PyTorch**, inspired by the work of
 
 ## 📂 Project Structure
 
-```
-
 small-language-model/
 ├── assets/
-│   └── demo.gif             # Project demo GIF
+│ └── demo.gif # Project demo GIF
 ├── data/
-│   ├── train.bin
-│   └── validation.bin
-├── saved\_models/
-│   └── best\_model\_params.pt # Trained model weights
-├── data\_preparation.py      # Tokenize dataset and create .bin files
-├── train.py                 # Model training code
-├── inference.py             # Run inference / generate text
-├── requirements.txt         # Python dependencies
-└── README.md                # Project documentation
+│ ├── train.bin
+│ └── validation.bin
+├── saved_models/
+│ └── best_model_params.pt # Trained model weights
+├── data_preparation.py # Tokenize dataset and create .bin files
+├── train.py # Model training code
+├── inference.py # Run inference / generate text
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
-````
+yaml
+Copy code
 
 ---
 
@@ -51,88 +45,72 @@ small-language-model/
 ```bash
 git clone https://github.com/yourusername/small-language-model.git
 cd small-language-model
-````
+Create a virtual environment and activate it:
 
-2. Create a virtual environment and activate it:
-
-```bash
+bash
+Copy code
 python -m venv venv
 source venv/bin/activate    # Linux/macOS
 venv\Scripts\activate       # Windows
-```
+Install dependencies:
 
-3. Install dependencies:
-
-```bash
+bash
+Copy code
 pip install -r requirements.txt
-```
+Note: GPU with CUDA is recommended for faster training.
 
-> **Note:** GPU with CUDA is recommended for faster training.
-
----
-
-## 📝 How to Run
-
-### 1. Prepare the dataset
-
-```bash
+📝 How to Run
+1. Prepare the dataset
+bash
+Copy code
 python data_preparation.py
-```
+This will tokenize TinyStories dataset and create train.bin and validation.bin.
 
-This will tokenize TinyStories dataset and create `train.bin` and `validation.bin`.
-
-### 2. Train the model
-
-```bash
+2. Train the model
+bash
+Copy code
 python train.py
-```
+Model weights will be saved in saved_models/best_model_params.pt.
 
-Model weights will be saved in `saved_models/best_model_params.pt`.
-
-### 3. Generate text
-
-```bash
+3. Generate text
+bash
+Copy code
 python inference.py
-```
+You can edit inference.py to provide your own prompt and control output length.
 
-You can edit `inference.py` to provide your own prompt and control output length.
+🎯 Example Outputs
+Prompt:
+Once upon a time there was a pumpkin.
 
----
+Generated Text:
+Once upon a time there was a pumpkin. It was orange and round, and everyone loved it. The pumpkin rolled around in the garden and made friends with the little mice...
 
-## 🎯 Example Outputs
+Prompt:
+A little girl went to the woods
 
-**Prompt:**
-`Once upon a time there was a pumpkin.`
+Generated Text:
+A little girl went to the woods. She saw the birds singing and the flowers blooming. Suddenly, she found a hidden path that led to a magical treehouse...
 
-**Generated Text:**
-`Once upon a time there was a pumpkin. It was orange and round, and everyone loved it. The pumpkin rolled around in the garden and made friends with the little mice...`
+🛠️ Technical Details
+Model Architecture: GPT-like small transformer
 
-**Prompt:**
-`A little girl went to the woods`
+Layers: 6
 
-**Generated Text:**
-`A little girl went to the woods. She saw the birds singing and the flowers blooming. Suddenly, she found a hidden path that led to a magical treehouse...`
+Heads: 6
 
----
+Embedding Size: 384
 
-## 🛠️ Technical Details
+Block size (context): 128 tokens
 
-* **Model Architecture:** GPT-like small transformer
-* **Layers:** 6
-* **Heads:** 6
-* **Embedding Size:** 384
-* **Block size (context):** 128 tokens
-* **Dataset:** TinyStories (HuggingFace)
-* **Training:** Mixed precision (bfloat16/float16)
-* **Optimizer:** AdamW with weight decay
-* **Learning Rate Scheduler:** Linear warmup + Cosine decay
+Dataset: TinyStories (HuggingFace)
 
----
+Training: Mixed precision (bfloat16/float16)
 
-## 👏 Credits
+Optimizer: AdamW with weight decay
 
-* **Dataset:** [TinyStories by Ronen Eldan](https://huggingface.co/datasets/roneneldan/TinyStories)
-* **Model Inspiration & Training Code:** [Vizuara AI Labs](https://www.vizuara.com/)
-Sobiya, now this is **ready-to-copy**. The folder structure is properly formatted and will **display correctly on GitHub**.  
+Learning Rate Scheduler: Linear warmup + Cosine decay
 
-Next, I can give you the **requirements.txt** so your repo is fully complete and anyone can install depend
+👏 Credits
+Dataset: TinyStories by Ronen Eldan
+
+Model Inspiration & Training Code: Vizuara AI Labs
